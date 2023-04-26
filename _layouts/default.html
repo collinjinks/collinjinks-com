@@ -2,13 +2,13 @@
 ---
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-{%- include head.html -%}
+{%- include site/head.html -%}
 <body class="
 {%- if layout.body-class or page.body-class -%}
     {{ layout.body-class }} {{ page.body-class }}
 {%- endif -%}
     ">
-{% unless page.no-header %}{% include header.html %}{% endunless %}
+{% unless page.no-header %}{% include site/header.html %}{% endunless %}
 <main>
 {{ content }}
 </main>
