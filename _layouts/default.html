@@ -12,9 +12,7 @@
 <main>
 {{ content }}
 </main>
-<footer>
-&copy; {{ "now" | date: "%Y" }} {{ site.title }}
-</footer>
+{%- include site/footer.html -%}
 {%- if page.end-of-body-script -%}
 <script>
 {%- include {{ page.end-of-body-script }} -%}
