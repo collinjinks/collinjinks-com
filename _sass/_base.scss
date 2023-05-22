@@ -1,12 +1,14 @@
 $text-font: "Inter", sans-serif;
 $heading-font: "Inter", sans-serif;
 $brand-font: "Archivo", sans-serif;
+$form-text-font: $text-font;
 
 $background-color-dark-theme: #273037; // #242B33;
 $background-gradient-color-dark-theme: #000e1a;
 $background-color-light-theme: #fbfffd;
 $text-color-dark-theme: $background-color-light-theme;
 $text-color-light-theme: $background-color-dark-theme;
+$link-color: $background-color-dark-theme;
 $brand-color: #d64110; // #ec2d01;
 $brand-color-2: #56b1b6;
 
@@ -35,7 +37,7 @@ $minimum-mobile-side-padding: calc(.75rem + env(safe-area-inset-left));
 $animation-duration: 100ms;
 $list-padding-left: 2rem;
 
-$default-max-content-width: 50rem;
+$default-max-content-width: 40rem;
 @mixin standard-block-behavior($max-width: $default-max-content-width) {
     max-width: $max-width;
     margin-left: auto;

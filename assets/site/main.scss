@@ -4,11 +4,69 @@
 @import "base";
 
 
+:root {
+    background-color: $background-color-light-theme;
+    color: $text-color-light-theme;
+    font-family: $text-font;
+    line-height: $standard-line-height;
 
-body > header {
-    background-color: lemonchiffon;
+    font-size: 22px;
+    @include breakpoint(tablet) {
+        font-size: 20px;
+    }
+}
+* {
+    box-sizing: border-box;
+    font-synthesis: none;
 }
 
-body > footer {
-    background-color: lightslategray;
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font;
+    color: $brand-color;
+    @include standard-block-behavior;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+p, form {
+    @include standard-block-behavior;
+}
+
+body {
+    margin: 0;
+
+    > header {
+        background-color: lemonchiffon;
+        margin-bottom: 3rem;
+    }
+
+    > footer {
+        background-color: $brand-color;
+        color: $text-color-dark-theme;
+        font-size: .8em;
+        padding-top: 3rem;
+        margin-top: 3rem;
+    }
+}
+
+a {
+    &:link, &:hover, &:active, &:visited {
+        color: $link-color;
+        text-underline-offset: .3em;
+        text-decoration-thickness: 1px;
+    }
+}
+
+input[type=text], input[type=email], textarea, button {
+    font-family: $form-text-font;
+    font-size: .9em;
+    -webkit-appearance: none;
+    padding: .3em .6em;
+    margin: 1em 0;
+    border-radius: 5px;
+    border: 1px solid $background-color-dark-theme;
+    display: block;
+    max-width: 100%;
+    width: 20em;
 }
