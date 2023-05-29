@@ -1,6 +1,7 @@
 ---
 layout: default
 custom-css: home
+end-of-body-script: site/contact-form.js
 ---
 
 <section>
@@ -38,11 +39,14 @@ custom-css: home
 
 <h2>Contact me</h2>
 
-<form>
-    <input type="text" placeholder="Name (required)" required />
-    <input type="email" placeholder="Email (required)" required />
-    <textarea placeholder="Message (required)" required ></textarea>
-    <button>Send</button>
+<form id="contact-form" action="https://formspree.io/f/xvonnywb" method="POST">
+    <input type="text" id="name" name="name" placeholder="Name (required)" required />
+    <input type="email" id="email" name="email" placeholder="Email (required)" required />
+    <textarea name="message" placeholder="Message (required)" required ></textarea>
+    <input type="text" name="_gotcha" class="gotcha" />
+    <input type="submit" name="submit" value="Send" />
+    <div id="contact-form-success" class="contact-form-response">{% include site/contact-me-form-submission-response-success.md %}</div>
+    <div id="contact-form-failure" class="contact-form-response">{% include site/contact-me-form-submission-response-failure.md %}</div>
 </form>
 
 </section>
