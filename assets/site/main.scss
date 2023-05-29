@@ -195,6 +195,10 @@ input[type=submit], button {
         color: $lightest-color;
     }
 }
+#fix-container {
+    margin-top: 3rem;
+    text-align: center;
+}
 .contact-form-response {
     position: absolute;
     left: 0;

@@ -3,6 +3,12 @@ var form = document.getElementById("contact-form");
 async function handleSubmit(event) {
     event.preventDefault();
     var statusFailure = document.getElementById("contact-form-failure");
+
+    if (event.submitter.id == "remove-failure-response") {
+        form.classList.remove("submitted-failure");
+        return;
+    }
+
     var data = new FormData(event.target);
 
     function failureHTML(errorHTML) {
