@@ -44,7 +44,7 @@ $minimum-mobile-side-padding: calc(.75rem + env(safe-area-inset-left));
         @return $minimum-mobile-side-padding;
     }
 }
-$list-padding-left: 2rem;
+$list-padding-left: 2em;
 
 $default-max-content-width: 40rem;
 @mixin standard-block-behavior($max-width: $default-max-content-width) {
