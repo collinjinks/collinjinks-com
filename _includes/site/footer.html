@@ -1,7 +1,11 @@
 <footer>
-&copy; {{ "now" | date: "%Y" }} {{ site.title }}
-
+{% include site/social.svg %}
 <div>
-    Facebook Instagram LinkedIn
+    <div id="footer-copyright">&copy; {{ "now" | date: "%Y" }} {{ site.title }}</div>
+    <div id="footer-social">
+        <a href="{{ data.website.social.youtube }}"><svg><use xlink:href="#youtube" /></svg></a>
+        <a href="{{ data.website.social.linkedin }}"><svg><use xlink:href="#linkedin" /></svg></a>
+        <a href="{{ data.website.social.facebook }}"><svg><use xlink:href="#facebook" /></svg></a>
+    </div>
 </div>
 </footer>

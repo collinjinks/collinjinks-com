@@ -33,19 +33,19 @@
     {%- if layout.custom-css -%}
         {%- if layout.custom-css[0] -%}
             {%- for css in layout.custom-css -%}
-            <link rel="stylesheet" href="{{ '/assets/' | append: css | append: '.css' | relative_url }}">
+            <link rel="stylesheet" href="{{ '/assets/site/' | append: css | append: '.css' | relative_url }}">
             {%- endfor -%}
         {%- else -%}
-            <link rel="stylesheet" href="{{ '/assets/' | append: layout.custom-css | append: '.css' | relative_url }}">
+            <link rel="stylesheet" href="{{ '/assets/site/' | append: layout.custom-css | append: '.css' | relative_url }}">
         {%- endif -%}
     {%- endif -%}
     {%- if page.custom-css -%}
         {%- if page.custom-css[0] -%}
             {%- for css in page.custom-css -%}
-                <link rel="stylesheet" href="{{ '/assets/' | append: css | append: '.css' | relative_url }}">
+                <link rel="stylesheet" href="{{ '/assets/site/' | append: css | append: '.css' | relative_url }}">
             {%- endfor -%}
         {%- else -%}
-            <link rel="stylesheet" href="{{ '/assets/' | append: page.custom-css | append: '.css' | relative_url }}">
+            <link rel="stylesheet" href="{{ '/assets/site/' | append: page.custom-css | append: '.css' | relative_url }}">
         {%- endif -%}
     {%- endif -%}
 
@@ -60,6 +60,15 @@
     <meta name="theme-color" content="{{ site.data.website.colors.dark-color }}">
 
     <!-- JS -->
+    {%- if layout.custom-js -%}
+        {%- if layout.custom-js[0] -%}
+            {%- for js in layout.custom-js -%}
+            <script src="{{ '/assets/site/' | append: js | append: '.js' | relative_url }}"></script>
+            {%- endfor -%}
+        {%- else -%}
+            <script src="{{ '/assets/site/' | append: layout.custom-js | append: '.js' | relative_url }}"></script>
+        {%- endif -%}
+    {%- endif -%}
     {%- if page.custom-js -%}
         {%- if page.custom-js[0] -%}
             {%- for js in page.custom-js -%}

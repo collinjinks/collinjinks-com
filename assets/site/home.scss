@@ -1,0 +1,70 @@
+---
+---
+@charset "utf-8";
+@import "base";
+
+section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+section:first-of-type {
+    @include standard-block-behavior;
+
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    img {
+        width: 40%;
+        aspect-ratio: 1;
+        object-fit: fill;
+        border-radius: 100%;
+        justify-self: center;
+        margin: 0 2em;
+    }
+
+    h1 {
+        font-size: 3em;
+        letter-spacing: -.01em;
+        margin: 0;
+        line-height: 1;
+        font-weight: 400;
+        padding: 0;
+    }
+    h2 {
+        font-size: 1.5em;
+        margin-top: 1rem;
+        line-height: 1.2;
+        font-weight: 400;
+        padding: 0;
+    }
+}
+
+section#media {
+    background-color: $accent-color;
+    a {
+        color: $light-color;
+        &:hover {
+            color: $lighter-color;
+        }
+    }
+}
+
+section#contact-me {
+    text-align: center;
+    form > * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.more {
+    margin-top: 2rem;
+    font-size: .9em;
+}

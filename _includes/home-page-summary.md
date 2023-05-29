@@ -1,0 +1,1 @@
+Collin is a pianist and teacher from Minnesota.

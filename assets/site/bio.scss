@@ -1,0 +1,35 @@
+---
+---
+@charset "utf-8";
+@import "base";
+
+.bio-links {
+    @include standard-block-behavior;
+    display: flex;
+    gap: 1em;
+    button {
+        margin: 0;
+        display: inline-block;
+    }
+}
+.bio {
+    display: none;
+}
+.done {
+    display: inline-block;
+    @include breakpoint(mobile) {
+        margin-left: 0;
+    }
+
+    opacity: 0;
+}
+
+@keyframes fade {
+    0% { opacity: 1; }
+    93% { opacity: 1; }
+    100% { opacity: 0;}
+}
+
+.show {
+    animation: fade 3s;
+}

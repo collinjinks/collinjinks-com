@@ -3,16 +3,35 @@
 @charset "utf-8";
 @import "base";
 
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    --body-font: #{$body-font};
+    --heading-font: var(--body-font);
+    --form-text-font: var(--body-font);
+    font-size: 22px;
+}
+body.theme-1 {
+    --body-font: #{$body-font-2};
+    font-size: 20px;
+}
+body.theme-2 {
+    --body-font: #{$body-font-3};
+    font-size: 24px;
+}
+
 
 :root {
-    background-color: $background-color-light-theme;
-    color: $text-color-light-theme;
-    font-family: $text-font;
+    background-color: $background-color;
+    color: $body-color;
     line-height: $standard-line-height;
 
-    font-size: 22px;
+    font-size: 20px;
     @include breakpoint(tablet) {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 * {
@@ -21,10 +40,10 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-font;
-    color: $brand-color;
+    font-family: var(--heading-font);
+    color: $accent-color;
     @include standard-block-behavior;
-    font-weight: 600;
+    font-weight: 400;
     margin-top: 3rem;
     margin-bottom: 1rem;
 }
@@ -35,38 +54,135 @@ p, form {
 
 body {
     margin: 0;
+    font-family: var(--body-font);
 
     > header {
-        background-color: lemonchiffon;
         margin-bottom: 3rem;
+
+        display: flex;
+        @include standard-block-behavior;
+
+        #logo {
+            flex-grow: 1;
+            a {
+                text-decoration: none;
+            }
+        }
+        ul {
+            display: flex;
+            font-family: $header-footer-font;
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            gap: 1em;
+            font-size: .9rem;
+            li a {
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: .1em;
+            }
+        }
     }
 
     > footer {
-        background-color: $brand-color;
-        color: $text-color-dark-theme;
-        font-size: .8em;
-        padding-top: 3rem;
-        margin-top: 3rem;
+        @include standard-block-behavior;
+        font-family: $header-footer-font;
+        font-size: .9rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+        color: $footer-body-color;
+
+        > div {
+            border-top: solid 1px $footer-background-color;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            display: flex;
+        }
+
+        #footer-copyright {
+            flex-grow: 1;
+        }
+        #footer-social {
+            display: flex;
+            gap: 1em;
+        }
+
+        a:hover svg {
+            fill: $link-hover-color;
+        }
+        svg {
+            width: 1em;
+            height: 1em;
+            fill: $footer-body-color;
+        }
     }
 }
 
 a {
-    &:link, &:hover, &:active, &:visited {
+    &:link, &:active, &:visited {
         color: $link-color;
+        transition: $animation-length color;
         text-underline-offset: .3em;
         text-decoration-thickness: 1px;
+    }
+    &:hover {
+        color: $link-hover-color;
+        transition: $animation-length color;
+    }
+}
+
+figure {
+    @include standard-block-behavior;
+    aspect-ratio: 1.8;
+    iframe {
+        width: 100%;
+        height: 100%;
     }
 }
 
 input[type=text], input[type=email], textarea, button {
-    font-family: $form-text-font;
-    font-size: .9em;
+    font-family: var(--form-text-font);
+    font-size: 1rem;
     -webkit-appearance: none;
-    padding: .3em .6em;
-    margin: 1em 0;
-    border-radius: 5px;
-    border: 1px solid $background-color-dark-theme;
+    padding: .5em .6em;
+    margin: 1.5em 0;
     display: block;
+}
+input[type=text], input[type=email], textarea {
     max-width: 100%;
-    width: 20em;
+    width: 25em;
+    border-radius: 5px;
+    border: 1px solid $light-color;
+    background-color: $lightest-color;
+    color: $body-color;
+
+    &::placeholder {
+        color: $light-color;
+        font-family: $form-placeholder-font;
+        letter-spacing: .1em;
+    }
+    &:focus {
+        border-color: $darkest-color;
+    }
+}
+textarea {
+    height: 10em;
+}
+button {
+    font-family: $form-placeholder-font;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: .9rem;
+    border-radius: 5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: $lighter-color;
+    color: $dark-color;
+    border: 1px solid $dark-color;
+    &:hover {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        color: $lightest-color;
+    }
 }

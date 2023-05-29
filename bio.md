@@ -1,31 +1,66 @@
 ---
 title: Bio
+custom-css: bio
 ---
 
-{%- include bio.html %}
+{%- include bio.md %}
 
-### Short bio
+### Concert bio (<span id="concert-bio-count"></span> words)
 
-<button>View PDF</button>
-<button>Copy to Clipboard</button>
+<div class="bio-links">
+    <button onclick="go('{{ site.baseurl }}{% link assets/Concert-bio.pdf %}')">View PDF</button>
+    <button onclick="copyBio('concert-bio')">Copy to Clipboard</button> <span class="done" id="concert-bio-done">Copied!</span>
+</div>
 
-### Long bio
+<div id="concert-bio" class="bio" markdown="1">
+{% include concert-bio.md %}
+</div>
 
-<button>View PDF</button>
-<button>Copy to Clipboard</button>
+### Short bio (<span id="short-bio-count"></span> words)
+
+<div class="bio-links">
+    <button onclick="go('{{ site.baseurl }}{% link assets/Short-bio.pdf %}')">View PDF</button>
+    <button onclick="copyBio('short-bio')">Copy to Clipboard</button> <span class="done" id="short-bio-done">Copied!</span>
+</div>
+
+<div id="short-bio" class="bio" markdown="1">
+{% include short-bio.md %}
+</div>
 
 ## Curriculum Vitae
 
-A concise version is listed below. A more complete curriculum vitae is available as a PDF.
+<button onclick="go('{{ site.baseurl }}{% link assets/CV.pdf %}')">View PDF</button>
 
-Educational Preparation
 
-Honors, Awards, and Achievements, Recitals
+<script>
+function go(url) {
+    location.href = url;
+}
+function copyBio(id) {
+    let bio = document.getElementById(id).innerText.replace(/\n\n\n/g, "\n\n");
+    let blob = new Blob([bio], { type: "text/plain" });
+    let item = new ClipboardItem({"text/plain": blob});
+    navigator.clipboard.write([item]).then(() => {}, () => {console.error(e);});
 
-Summer Festivals/Internships
+    document.getElementById(id + "-done").classList.add("show");
 
-Scholarships and Grants
+}
+window.addEventListener('DOMContentLoaded', () => {
+    function countWords(id) {
+        var text = document.getElementById(id).innerText;
+        var count = text.trim().split(/\s+/).filter(st => st != '').length;
+        document.getElementById(id + "-count").innerText = count;
+    }
+    countWords("concert-bio");
+    countWords("short-bio");
 
-Community Outreach
+    document.querySelectorAll(".done").forEach(function (label) {
+        label.addEventListener("animationend", (e) => {
+            e.target.classList.remove("show");
+        })
+    })
 
-Articles and Events
+    var lightbox = new Lightbox();
+    lightbox.load();
+});
+</script>

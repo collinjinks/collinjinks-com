@@ -1,21 +1,32 @@
-$text-font: "Inter", sans-serif;
-$heading-font: "Inter", sans-serif;
-$brand-font: "Archivo", sans-serif;
-$form-text-font: $text-font;
+$body-font: "Lora", Georgia, serif;
+$brand-font: $body-font;
+$form-text-font: $body-font;
+$header-footer-font: "Barlow Condensed", sans-serif;
+$form-placeholder-font: $header-footer-font;
 
-$background-color-dark-theme: #273037; // #242B33;
-$background-gradient-color-dark-theme: #000e1a;
-$background-color-light-theme: #fbfffd;
-$text-color-dark-theme: $background-color-light-theme;
-$text-color-light-theme: $background-color-dark-theme;
-$link-color: $background-color-dark-theme;
-$brand-color: #d64110; // #ec2d01;
-$brand-color-2: #56b1b6;
+$body-font-2: "Libre Baskerville", Georgia, serif;
+$body-font-3: "Crimson Text", Georgia, serif;
 
-$background-gradient: linear-gradient(var(--background-color-dark-theme) 0 30%, $background-gradient-color-dark-theme);
+$darkest-color: #221a10;
+$dark-color: #6b6460;
+$light-color: #b0a589;
+$lighter-color: #ececd9;
+$lightest-color: #fafaf7;
+$accent-color: #7f0e1d;
+
+
+$background-color: $lighter-color;
+$body-color: $darkest-color;
+$link-color: $dark-color;
+$link-hover-color: $light-color;
+
+$footer-background-color: $accent-color;
+$footer-body-color: $dark-color;
 
 $standard-line-height: 1.7;
 $minimum-line-height: 1.4;
+
+$animation-length: 100ms;
 
 $minimum-side-padding: calc(1.5rem + env(safe-area-inset-left));
 $minimum-mobile-side-padding: calc(.75rem + env(safe-area-inset-left));
@@ -33,8 +44,6 @@ $minimum-mobile-side-padding: calc(.75rem + env(safe-area-inset-left));
         @return $minimum-mobile-side-padding;
     }
 }
-
-$animation-duration: 100ms;
 $list-padding-left: 2rem;
 
 $default-max-content-width: 40rem;
