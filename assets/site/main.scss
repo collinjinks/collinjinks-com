@@ -48,8 +48,20 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
-p, form {
-    @include standard-block-behavior;
+main {
+    p, form {
+        @include standard-block-behavior;
+    }
+    ul {
+        @include standard-block-behavior;
+        padding-left: minimum-side-padding-with-addition($list-padding-left);
+        @include breakpoint(mobile) {
+            padding-left: minimum-mobile-side-padding-with-addition($list-padding-left);
+        }
+    }
+    ul ol {
+        padding-left: $list-padding-left * 1.5;
+    }
 }
 
 body {
@@ -61,6 +73,7 @@ body {
         margin-bottom: 3rem;
 
         display: flex;
+        align-items: center;
         @include standard-block-behavior;
 
         #logo {
@@ -133,6 +146,31 @@ a {
     }
 }
 
+#image-gallery {
+    margin-bottom: 3rem;
+}
+.download {
+    font-family: $form-placeholder-font;
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: .9rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    border: 1px solid $dark-color;
+    border-radius: 5em;
+    padding: .4em 1.6em;
+    background-color: $light-color;
+    color: $dark-color;
+    &:hover {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        color: $lightest-color;
+    }
+}
+
 figure {
     @include standard-block-behavior;
     aspect-ratio: 1.8;
@@ -141,6 +179,8 @@ figure {
         height: 100%;
     }
 }
+
+
 
 
 form {
@@ -212,9 +252,6 @@ input[type=submit], button {
 
     p {
         padding: 0;
-    }
-    ul {
-        padding-left: $list-padding-left;
     }
 }
 form.submitted-success #contact-form-success {

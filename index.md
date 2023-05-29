@@ -1,6 +1,10 @@
 ---
 layout: default
-custom-css: home
+custom-css:
+    - lightbox.min
+    - home
+custom-js:
+    - lightbox.min
 end-of-body-script: site/contact-form.js
 ---
 
@@ -23,8 +27,16 @@ end-of-body-script: site/contact-form.js
 
 <section id="media" markdown="1">
 
-![Image](https://dummyimage.com/100x100/2ac3ae/feffff?font=bebas&retina=1&text=Image+1)
-![Image](https://dummyimage.com/100x100/2ac3ae/feffff?font=bebas&retina=1&text=Image+2)
+<div id="image-gallery">
+{%- for image in site.data.image-gallery -%}
+    {%- assign url = 'assets/media/' | append: image.image | relative_url -%}
+    <a href="{{ url }}" data-jslghtbx="{{ url }}" data-jslghtbx-group="a" data-jslghtbx-caption="<a href='{{ url }}' download class='download'>Download image</a>"><img src="{{ 'assets/media/' | append: image.thumb | relative_url }}" /></a>
+{%- endfor -%}
+</div>
+<script>
+    var lightbox = new Lightbox();
+    lightbox.load();
+</script>
 
 <figure>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwI-iirY4eU?modestbranding=1" frameborder="0" allow="picture-in-picture" allowfullscreen></iframe>

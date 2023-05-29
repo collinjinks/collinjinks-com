@@ -68,3 +68,23 @@ section#contact-me {
     margin-top: 2rem;
     font-size: .9em;
 }
+
+#image-gallery {
+    @include standard-block-behavior;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem 1%;
+    a {
+        display: block;
+        width: 24%;
+        height: 24%;
+    }
+    img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+}
+@import "lightbox";

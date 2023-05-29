@@ -72,10 +72,10 @@
     {%- if page.custom-js -%}
         {%- if page.custom-js[0] -%}
             {%- for js in page.custom-js -%}
-            <script src="{{ '/assets/' | append: js | append: '.js' | relative_url }}"></script>
+            <script src="{{ '/assets/site/' | append: js | append: '.js' | relative_url }}"></script>
             {%- endfor -%}
         {%- else -%}
-            <script src="{{ '/assets/' | append: page.custom-js | append: '.js' | relative_url }}"></script>
+            <script src="{{ '/assets/site/' | append: page.custom-js | append: '.js' | relative_url }}"></script>
         {%- endif -%}
     {%- endif -%}
 </head>

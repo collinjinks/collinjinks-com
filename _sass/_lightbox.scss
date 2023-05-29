@@ -1,0 +1,84 @@
+@import "base";
+
+$arrow-color: $light-color;
+$hover-color: $lightest-color;
+.jslghtbx-caption {
+    margin-top: 1rem;
+}
+.jslghtbx-close {
+    width: 1.67em;
+    height: 1.67em;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 1.67em;
+    margin-top: 0;
+    color: $lighter-color;
+    transition: none;
+
+    &:hover {
+        text-shadow: none;
+        color: $hover-color;
+    }
+}
+.jslghtbx.jslghtbx-active {
+    background-color: rgba(34, 26, 16, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.jslghtbx-contentwrapper > img {
+    background: black;
+    padding: 0;
+    box-shadow: 0 0.2em 1em rgba(34, 26, 16, 0.6);
+}
+.jslghtbx-next, .jslghtbx-prev {
+    width: 3em;
+    height: 10em;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -.8em;
+        border: .8em solid transparent;
+    }
+}
+.jslghtbx-next {
+    @media screen and(min-width: 451px) {
+        &.jslghtbx-no-img {
+            border: 0;
+        }
+    }
+    @media screen and(max-width: 600px) {
+        &.jslghtbx-no-img {
+            border: 0;
+        }
+    }
+    &:hover:before {
+        border-left-color: $hover-color;
+    }
+    &:before {
+        right: 0;
+        border-left-color: $arrow-color;
+    }
+}
+.jslghtbx-prev {
+    @media screen and(min-width: 451px) {
+        &.jslghtbx-no-img {
+            border: 0;
+        }
+    }
+    @media screen and(max-width: 600px) {
+        &.jslghtbx-no-img {
+            border: 0;
+        }
+    }
+    &:hover:before {
+        border-right-color: $hover-color;
+    }
+    &:before {
+        left: 0;
+        border-right-color: $arrow-color;
+    }
+}
+
