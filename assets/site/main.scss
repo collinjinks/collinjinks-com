@@ -146,41 +146,19 @@ a {
     }
 }
 
-#image-gallery {
-    margin-bottom: 3rem;
-}
-.download {
-    font-family: $form-placeholder-font;
-    text-decoration: none;
-
-    display: inline-block;
-
-    font-size: .9rem;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-
-    border: 1px solid $dark-color;
-    border-radius: 5em;
-    padding: .4em 1.6em;
-    background-color: $light-color;
-    color: $dark-color;
-    &:hover {
-        background-color: $accent-color;
-        border-color: $accent-color;
-        color: $lightest-color;
+main > header.hero-image {
+    img {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 100vw;
+        height: 50vw;
+        object-fit: cover;
+    }
+    h1 {
+        margin-top: 50vw;
     }
 }
-
-figure {
-    @include standard-block-behavior;
-    aspect-ratio: 1.8;
-    iframe {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-
 
 
 form {

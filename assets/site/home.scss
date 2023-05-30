@@ -56,6 +56,40 @@ section#media {
     }
 }
 
+#image-gallery {
+    margin-bottom: 3rem;
+}
+.download {
+    font-family: $form-placeholder-font;
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: .9rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    border: 1px solid $dark-color;
+    border-radius: 5em;
+    padding: .4em 1.6em;
+    background-color: $light-color;
+    color: $dark-color;
+    &:hover {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        color: $lightest-color;
+    }
+}
+
+figure {
+    @include standard-block-behavior;
+    aspect-ratio: 1.8;
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 section#contact-me {
     text-align: center;
     form > * {

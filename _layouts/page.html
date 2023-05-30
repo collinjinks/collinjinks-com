@@ -2,7 +2,10 @@
 layout: default
 ---
 
-<header>
+<header {% if page.hero-image -%}class="hero-image"{%- endif -%}>
+{%- if page.hero-image -%}
+    <img src="{{ '/assets/media/' | append: page.hero-image | relative_url }}" />
+{%- endif -%}
     <h1>{{ page.title | smartify }}</h1>
 </header>
 {{ content }}
