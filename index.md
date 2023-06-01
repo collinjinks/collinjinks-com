@@ -29,8 +29,8 @@ end-of-body-script: site/contact-form.js
 
 <div id="image-gallery">
 {%- for image in site.data.image-gallery -%}
-    {%- assign url = 'assets/media/' | append: image.image | relative_url -%}
-    <a href="{{ url }}" data-jslghtbx="{{ url }}" data-jslghtbx-group="a" data-jslghtbx-caption="<a href='{{ url }}' download class='download'>Download image</a>"><img src="{{ 'assets/media/' | append: image.thumb | relative_url }}" /></a>
+    {%- assign url = site.image-gallery-directory | append: image.image | relative_url -%}
+    <a href="{{ url }}" data-jslghtbx="{{ url }}" data-jslghtbx-group="a" data-jslghtbx-caption="<a href='{{ url }}' download class='download'>Download image</a>"><img src="{{ site.image-gallery-directory | append: image.thumb | relative_url }}" /></a>
 {%- endfor -%}
 </div>
 <script>
