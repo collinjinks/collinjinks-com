@@ -8,4 +8,4 @@ Jinks has performed with The La Crosse Symphony Orchestra, Mississippi Valley Or
 
 In masterclass, Jinks has had the honor of performing for esteemed artists such as John Perry, Enrico Elisi, Leon Fleisher, Vladimir Feltsman, Sergei Babayan, Stewart Goodyear, Olga Kern, Barry Douglas, Kevin Kenner, Boris Slutsky, Bernadene Blaha, and Yong Hi Moon. Most recently during his residency at the San Francisco Conservatory, Jinks has performed in masterclasses under the tutelage of pianists Garrick Ohlsson, Inna Faliks, Awadagin Pratt, and Jean-Yves Thibaudet.
 
-Jinks is an avid teacher and currently serves as instructor of piano at the Hovland Conservatory of Music. He is also an accomplished photographer and enjoys cycling in his free time.
+Jinks is an avid teacher and currently serves as instructor of piano at the Hovland Conservatory of Music. He is also an accomplished photographer and enjoys cycling in his free time. Addition.
