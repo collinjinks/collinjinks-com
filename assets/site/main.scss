@@ -161,14 +161,14 @@ a {
 main > header.hero-image {
     img {
         position: absolute;
-        top: 0;
+        top: 3rem;
         z-index: -1;
         width: 100vw;
         height: 50vw;
         object-fit: cover;
     }
     h1 {
-        margin-top: 50vw;
+        margin-top: calc(50vw + 3rem);
     }
 }
 
