@@ -79,6 +79,9 @@ section#media {
         border-color: $accent-color;
         color: $lightest-color;
     }
+    &, &:hover {
+        transition: color $animation-length, border-color $animation-length, background-color $animation-length;
+    }
 }
 
 figure {

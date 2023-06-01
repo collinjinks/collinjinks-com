@@ -13,12 +13,13 @@ $hover-color: $lightest-color;
     text-align: center;
     line-height: 1.67em;
     margin-top: 0;
-    color: $lighter-color;
-    transition: none;
+    color: $arrow-color;
+    transition: color $animation-length;
 
     &:hover {
         text-shadow: none;
         color: $hover-color;
+        transition: color $animation-length;
     }
 }
 .jslghtbx.jslghtbx-active {
@@ -44,6 +45,10 @@ $hover-color: $lightest-color;
     }
 }
 .jslghtbx-next {
+    &:before, &:hover:before {
+        transition: border-color $animation-length;
+    }
+
     @media screen and(min-width: 451px) {
         &.jslghtbx-no-img {
             border: 0;
@@ -63,6 +68,10 @@ $hover-color: $lightest-color;
     }
 }
 .jslghtbx-prev {
+    &:before, &:hover:before {
+        transition: border-color $animation-length;
+    }
+
     @media screen and(min-width: 451px) {
         &.jslghtbx-no-img {
             border: 0;
