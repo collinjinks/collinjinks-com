@@ -13,14 +13,23 @@ body {
     --heading-font: var(--body-font);
     --form-text-font: var(--body-font);
     font-size: 22px;
+    @include breakpoint(tablet) {
+        font-size: 20px;
+    }
 }
 body.theme-1 {
     --body-font: #{$body-font-2};
     font-size: 20px;
+    @include breakpoint(tablet) {
+        font-size: 18px;
+    }
 }
 body.theme-2 {
     --body-font: #{$body-font-3};
     font-size: 24px;
+    @include breakpoint(tablet) {
+        font-size: 22px;
+    }
 }
 
 
@@ -32,6 +41,9 @@ body.theme-2 {
     font-size: 20px;
     @include breakpoint(tablet) {
         font-size: 18px;
+    }
+    @include breakpoint(mobile) {
+        font-size: 16px;
     }
 }
 * {
