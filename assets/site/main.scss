@@ -3,35 +3,15 @@
 @charset "utf-8";
 @import "base";
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
-    --body-font: #{$body-font};
-    --heading-font: var(--body-font);
-    --form-text-font: var(--body-font);
-    font-size: 22px;
-    @include breakpoint(tablet) {
-        font-size: 20px;
-    }
-}
-body.theme-1 {
-    --body-font: #{$body-font-2};
-    font-size: 20px;
-    @include breakpoint(tablet) {
-        font-size: 18px;
-    }
-}
-body.theme-2 {
-    --body-font: #{$body-font-3};
     font-size: 24px;
     @include breakpoint(tablet) {
         font-size: 22px;
     }
 }
-
 
 :root {
     background-color: $background-color;
@@ -52,7 +32,7 @@ body.theme-2 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
+    font-family: $brand-font;
     color: $accent-color;
     @include standard-block-behavior;
     font-weight: 400;
@@ -78,7 +58,7 @@ main {
 
 body {
     margin: 0;
-    font-family: var(--body-font);
+    font-family: $body-font;
 
     > header {
         padding-top: .5rem;
@@ -180,7 +160,7 @@ form {
     gap: 1.5rem;
 }
 input[type=text], input[type=email], input[type=submit], textarea, button {
-    font-family: var(--form-text-font);
+    font-family: $form-text-font;
     font-size: 1rem;
     -webkit-appearance: none;
     padding: .5em .6em;
