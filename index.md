@@ -27,16 +27,15 @@ end-of-body-script: site/contact-form.js
 
 <section id="media" markdown="1">
 
+{%- if site.data.image-gallery -%}
 <div id="image-gallery">
 {%- for image in site.data.image-gallery -%}
     {%- assign url = site.image-gallery-directory | append: image.image | relative_url -%}
     <a href="{{ url }}" data-jslghtbx="{{ url }}" data-jslghtbx-group="a" data-jslghtbx-caption="<a href='{{ url }}' download class='download'>Download image</a>"><img src="{{ site.image-gallery-directory | append: image.thumb | relative_url }}" /></a>
 {%- endfor -%}
 </div>
-<script>
-    var lightbox = new Lightbox();
-    lightbox.load();
-</script>
+<script>var lightbox = new Lightbox();lightbox.load();</script>
+{%- endif -%}
 
 <figure>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwI-iirY4eU?modestbranding=1" frameborder="0" allow="picture-in-picture" allowfullscreen></iframe>
