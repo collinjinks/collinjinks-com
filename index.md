@@ -6,6 +6,7 @@ custom-css:
 custom-js:
     - lightbox.min
 end-of-body-script: site/contact-form.js
+meta-description: Pianist and teacher from Stillwater, Minnesota.
 ---
 
 <section>
