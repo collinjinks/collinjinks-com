@@ -1,7 +1,7 @@
 ---
 title: Bio
 custom-css: bio
-hero-image: photo_2.jpg
+hero-image: photo_1.jpg
 ---
 
 {%- include bio.md %}
